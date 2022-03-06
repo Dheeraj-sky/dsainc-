@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> countBits(int n) {
+        vector<int>v(n+1);
+        v[0]=0;
+        if(n==0)
+            return v;
+    
+        for(int i=1;i<=n;i++)
+        {
+            int count=0;
+            int num=i;
+            while(num)
+            {
+                if(num%2==1)
+                    count++;
+                num/=2;
+            }
+            v[i]=count;
+        }
+        return v;
+    }
+};
